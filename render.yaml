@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: tempo
+    runtime: docker
+    plan: free
+    envVars:
+      - key: PORT
+        value: "8080"
+      # Render asks you for this value in its dashboard, so it never sits in GitHub.
+      - key: ADMIN_PASSWORD
+        sync: false
+      # Optional: a hosted MySQL, so data survives restarts (see README). Without these the
+      # built-in H2 database is used and it resets whenever the service restarts.
+      # - key: DB_URL
+      #   sync: false
+      # - key: DB_USER
+      #   sync: false
+      # - key: DB_PASSWORD
+      #   sync: false

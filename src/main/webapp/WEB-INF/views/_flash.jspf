@@ -1,0 +1,4 @@
+<c:if test="${not empty sessionScope.flash}">
+  <div class="flash ${sessionScope.flashType}" role="status"><c:out value="${sessionScope.flash}"/></div>
+  <c:remove var="flash" scope="session"/><c:remove var="flashType" scope="session"/>
+</c:if>
